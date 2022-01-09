@@ -5,7 +5,7 @@ long duration, cm, inches;
  
 void setup() {
   //Serial Port begin
-  Serial.begin (9600);
+  Serial.begin (115200);
   
   //Define pins
   pinMode(trigPin, OUTPUT);
@@ -34,5 +34,5 @@ void loop() {
   Serial.print("cm");
   Serial.println();
   
-  delay(200);
+  delay(500);
 }
