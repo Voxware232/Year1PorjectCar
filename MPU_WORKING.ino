@@ -4,7 +4,7 @@
 // Create sensor object
 MPU9250_asukiaaa mySensor;
 
-float  aY,aSqrt;
+float  aY,gX,gY,aSqrt;
 void setup() {
   
   Serial.begin(115200);
@@ -14,7 +14,7 @@ void setup() {
   // Internal function from lib
   mySensor.beginAccel();
   mySensor.beginGyro();
-  mySensor.beginMag();
+  
 
 }
 
@@ -40,7 +40,17 @@ void loop() {
   {
     Serial.println("Cannod read Y axis accel values");
   }
-
+  if (mySensor.gyroUpdate() == 0) {
+    gX = mySensor.gyroX();
+    gY = mySensor.gyroY();
+    
+    Serial.println("gyroX: " + String(gX));
+    Serial.println("gyroY: " + String(gY));
+    
+  } 
+  else {
+    Serial.println("Cannot read gyro values");
+  }
   // How long program has been running
   Serial.println("at " + String(millis()) + "ms");
   Serial.println(""); // Add an empty line
