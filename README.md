@@ -11,5 +11,5 @@ To Push (Upload once any changes have been made):
     git add . (This may be needed since there may be different files that have been added3)
     git commit -m "enter text here"
     git branch -M main
-    (Might be needed if there is an error with the 'origin') git remote add origin [enter git https link] https://github.com/Voxware232/SOLARCARMOTEC.git
+    (Might be needed if there is an error with the 'origin') git remote add origin [enter git https link] https://github.com/Voxware232/Year1ProjectCar
     git push -u origin main
